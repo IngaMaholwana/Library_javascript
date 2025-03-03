@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    --primary: #2A2D34;
+    --secondary: #D5C4A1;
+
+    --accent: #705D56;
+    --text: #E5E5E5;
+
+    --header: #EDE3D4;
+    --bgc: #3c5164 ;
+}
+
+h1,h2,*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+body{
+    background-color: var(--bgc);
+    color: var(--text);
+}
+header {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+  
+.header-container{
+    background-color: var(--secondary);
+    color: var(--accent);
+    text-align: center;
+    padding:1rem 1.67rem;
+
+    background-color: var(--header);
+}
+
+.header-container h1{
+    font-size: 2.2rem;
+    font-weight: 900;
+
+}
+
+.header-container h2{
+    font-size: 1.1rem;
+    font-weight: 900;
+
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    gap: 0.33rem;
+
+    border: 1px solid var(--secondary);
+    border-radius: 0.3rem;
+}
+
+
+dialog[open] {
+    padding: 3rem 5.4rem;
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    border: 3px solid var(--secondary);
+    border-radius: 0.5rem;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+dialog[open] input{
+    padding: 3px 5.5px;
+    border: 2px solid var(--secondary);
+    border-radius: 0.3rem;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.33);
+}
+dialog p{
+    font-size: 2rem;
+}
+
+.hidden{
+    display: hidden;
+}
+
+
+
+.book *{
+    padding: 0px 1rem;
+}
+.title{
+    font-size: 1.33rem;
+    font-weight: 600;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.title:hover, .title:active{
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.author{
+    font-style: italic;
+}
+
+.title,.author,.pages{
+    word-wrap:break-word;
+}
+
+
+#showBtn{
+    width: calc(100% - 6.8rem);
+    margin: 0rem 3.4rem;
+    margin-top: 3.4rem;
+    padding: 1rem 1.7rem;
+
+    border: 3px solid var(--accent);
+    border-radius: 0.3rem;
+
+    font-size: 1.3rem;
+
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+#showBtn:hover, #showBtn:active{
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--accent);
+}
+
+.btns{
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+.remove-btn, .read-btn, #submit, #closeBtn{
+    flex: 1;
+    padding: 0.5rem 0.85rem;
+
+    border: 2px solid var(--secondary);
+
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.remove-btn, #closeBtn{
+    border-top-right-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+}
+.read-btn, #submit{
+    border-top-left-radius: 0.7rem;
+    border-bottom-left-radius: 0.7rem;
+}
+
+.read-btn:hover, .remove-btn:hover, .read-btn:active, .remove-btn:active, #closeBtn:hover,#submit:hover,#closeBtn:active,#submit:active{
+    background-color: rgb(154, 227, 154);
+    border-color: var(--accent);
+    color: black;
+}
+
+.remove-btn:hover, .remove-btn:active, #closeBtn:hover, #closeBtn:active{
+    background-color: rgb(194, 158, 158);
+}
+
+.mono{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+}
+
+#books{
+    margin: 2rem 3.4rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+@media only screen and (max-width: 480px){
+    #showBtn{
+        width: calc(100% - 2rem);
+        margin: 0rem 1rem;
+        margin-top: 1rem;
+        padding: 1rem 1.7rem;    
+    }
+    #books{
+        margin: 1rem 1rem;
+
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;    
+    }
+}
